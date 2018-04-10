@@ -13,6 +13,7 @@ use jorudan\wechat\Kernel\ServiceContainer;
  * @property \jorudan\wechat\OfficialAccount\User             $user
  * @property \jorudan\wechat\OfficialAccount\Menu             $menu
  * @property \jorudan\wechat\OfficialAccount\TemplateMessage  $templateMessage
+ * @property \jorudan\wechat\OfficialAccount\Material         $material
  */
 class OfficialAccount extends ServiceContainer
 {
@@ -20,5 +21,6 @@ class OfficialAccount extends ServiceContainer
         'user' => \jorudan\wechat\OfficialAccount\User::class,
         'menu' => \jorudan\wechat\OfficialAccount\Menu::class,
         'templateMessage' => \jorudan\wechat\OfficialAccount\TemplateMessage::class,
+        'material' => \jorudan\wechat\OfficialAccount\Material::class,
     ];
 }
