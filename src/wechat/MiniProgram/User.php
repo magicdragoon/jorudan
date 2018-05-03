@@ -51,13 +51,16 @@ class User extends Config
             ];
         }
 
-        $return = Util::decryptAesData($this->_config['appid'], $return['session_key'], $encryptedData, $iv);
-        if (!$return)
+        if (!empty($encryptedData) && !empty($iv))
         {
-            return [
-                'errcode' => 4,
-                'errmsg' => '系统异常!',
-            ];
+            $return = Util::decryptAesData($this->_config['appid'], $return['session_key'], $encryptedData, $iv);
+            if (!$return)
+            {
+                return [
+                    'errcode' => 4,
+                    'errmsg' => '系统异常!',
+                ];
+            }
         }
 
         return $return;
